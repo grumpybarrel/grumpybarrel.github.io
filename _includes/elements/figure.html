@@ -1,0 +1,11 @@
+{% assign fig_src = include.src %}
+{% assign fig_alt = include.alt | default: "" %}
+{% assign fig_caption = include.caption %}
+{% assign fig_size = include.size | default: "figure-md" %}
+
+<figure class="figure {{ fig_size }}">
+  <img src="{{ fig_src | relative_url }}" alt="{{ fig_alt }}">
+  {% if fig_caption %}
+  <figcaption>{{ fig_caption }}</figcaption>
+  {% endif %}
+</figure>

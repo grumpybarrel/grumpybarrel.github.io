@@ -1,0 +1,37 @@
+title: Grumpy Barrel
+description: Small films with grit, heart, and a clean finish.
+baseurl: ""
+url: "https://grumpybarrel.com"
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+
+kramdown:
+  hard_wrap: true
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - .bundle/
+  - .sass-cache/
+  - .jekyll-cache/
+  - grumpy_barrel_claude_code_compact_prompt.md
+  - "grumpy_barrel_github_pages_build_brief (1).md"
+  - grumpy_barrel_github_pages_build_brief.md
+  - grumpybarrel-setup-prompt.md

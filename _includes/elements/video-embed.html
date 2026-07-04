@@ -1,0 +1,14 @@
+{% assign embed_url = include.url %}
+{% assign embed_title = include.title | default: "Video" %}
+
+{% if embed_url %}
+<div class="video-wrapper">
+  <iframe
+    src="{{ embed_url }}?title=0&byline=0&portrait=0"
+    title="{{ embed_title }}"
+    frameborder="0"
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
+{% endif %}

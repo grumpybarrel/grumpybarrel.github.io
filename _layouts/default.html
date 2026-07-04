@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title and page.title != site.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  {% seo %}
+  {% feed_meta %}
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="{{ '/' | relative_url }}" class="site-logo">Grumpy Barrel</a>
+      <nav class="site-nav">
+        <a href="{{ '/projects/' | relative_url }}" {% if page.url contains '/projects' %}class="active"{% endif %}>Work</a>
+        <a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about' %}class="active"{% endif %}>About</a>
+        <a href="{{ '/contact/' | relative_url }}" {% if page.url contains '/contact' %}class="active"{% endif %}>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-brand">Grumpy Barrel</p>
+        <p class="footer-tagline">{{ site.description }}</p>
+        <nav class="footer-nav">
+          <a href="{{ '/projects/' | relative_url }}">Work</a>
+          <a href="{{ '/about/' | relative_url }}">About</a>
+          <a href="{{ '/contact/' | relative_url }}">Contact</a>
+          <a href="https://vimeo.com/scotttes" target="_blank" rel="noopener">Vimeo</a>
+        </nav>
+        <p class="footer-copy">&copy; {{ 'now' | date: "%Y" }} Grumpy Barrel. Singapore.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% assign btn_href = include.href | default: "#" %}
+{% assign btn_label = include.label | default: "Learn more" %}
+{% assign btn_class = include.class | default: "btn-primary" %}
+{% assign btn_external = include.external | default: false %}
+
+{% if btn_external %}
+<a href="{{ btn_href }}" class="btn {{ btn_class }}" target="_blank" rel="noopener">{{ btn_label }}</a>
+{% else %}
+<a href="{{ btn_href | relative_url }}" class="btn {{ btn_class }}">{{ btn_label }}</a>
+{% endif %}

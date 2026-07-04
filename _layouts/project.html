@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<article class="project-single">
+  <div class="container">
+
+    <a href="{{ '/projects/' | relative_url }}" class="back-link">&larr; All Work</a>
+
+    <header class="project-header">
+      <h1 class="project-title">{{ page.title }}</h1>
+      <div class="project-meta">
+        {% if page.client %}<span class="project-client">{{ page.client }}</span>{% endif %}
+        {% if page.category %}<span class="project-category">{{ page.category }}</span>{% endif %}
+        {% if page.date %}<span class="project-date">{{ page.date | date: "%Y" }}</span>{% endif %}
+      </div>
+      {% if page.tags and page.tags.size > 0 %}
+      <div class="project-tags">
+        {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+      </div>
+      {% endif %}
+    </header>
+
+    {% if page.video_embed %}
+    <div class="project-video">
+      {% include elements/video-embed.html url=page.video_embed %}
+    </div>
+    {% elsif page.image %}
+    <div class="project-thumb">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+    </div>
+    {% endif %}
+
+    <div class="project-body">
+      {% if page.description %}
+      <p class="project-description">{{ page.description }}</p>
+      {% endif %}
+      {{ content }}
+    </div>
+
+    <div class="project-cta">
+      {% include elements/button.html href="/contact/" label="Get in touch" %}
+      {% include elements/button.html href="/projects/" label="More work" class="btn-secondary" %}
+    </div>
+
+  </div>
+</article>
