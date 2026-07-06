@@ -35,7 +35,7 @@ permalink: /
 
 <section class="featured-work">
   <div class="container">
-    <h2 class="section-title">Featured Projects</h2>
+    <h2 class="section-title">Our Featured Projects</h2>
     <div class="project-grid">
       {% assign featured = site.projects | where: "featured", true %}
       {% for project in featured %}
