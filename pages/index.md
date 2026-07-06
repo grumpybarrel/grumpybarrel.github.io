@@ -5,6 +5,10 @@ permalink: /
 ---
 
 <section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="{{ '/assets/video/hero-reel.mp4' | relative_url }}" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
   <div class="container">
     <h1 class="hero-title">Grumpy Barrel</h1>
     <p class="hero-tagline">Small films with grit, heart, and a clean finish.</p>
