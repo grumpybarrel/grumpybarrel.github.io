@@ -36,7 +36,7 @@ permalink: /contact/
         <h3>Online</h3>
         <p>
           <a href="https://vimeo.com/scotttes" target="_blank" rel="noopener">Vimeo</a><br>
-          <a href="https://instagram.com/grumpybarrel" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.instagram.com/scott_tes/" target="_blank" rel="noopener noreferrer">Instagram</a>
         </p>
       </div>
     </div>

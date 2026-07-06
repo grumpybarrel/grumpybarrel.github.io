@@ -2,6 +2,12 @@
 layout: default
 title: Work
 permalink: /projects/
+pagination:
+  enabled: true
+  collection: projects
+  per_page: 12
+  sort_field: 'date'
+  sort_reverse: true
 ---
 
 <div class="page-content">
@@ -11,12 +17,15 @@ permalink: /projects/
       <p class="page-intro">A selection of projects — commercials, brand films, events, and everything in between.</p>
     </header>
 
-    <div class="project-grid">
-      {% assign all_projects = site.projects | sort: "date" | reverse %}
-      {% for project in all_projects %}
+    <div class="project-grid" id="project-grid">
+      {% for project in paginator.posts %}
       <article class="project-card">
         <a href="{{ project.url | relative_url }}" class="project-card-link">
-          {% if project.image %}
+          {% if project.thumbnail %}
+          <div class="project-card-thumb">
+            <img src="{{ project.thumbnail }}" alt="{{ project.title }}">
+          </div>
+          {% elsif project.image %}
           <div class="project-card-thumb">
             <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
           </div>
@@ -26,15 +35,59 @@ permalink: /projects/
           </div>
           {% endif %}
           <div class="project-card-body">
-            {% if project.featured %}<span class="badge">Featured</span>{% endif %}
             <h2 class="project-card-title">{{ project.title }}</h2>
             {% if project.client %}<p class="project-card-client">{{ project.client }}</p>{% endif %}
             {% if project.category %}<p class="project-card-category">{{ project.category }}</p>{% endif %}
-            {% if project.description %}<p class="project-card-desc">{{ project.description | truncate: 100 }}</p>{% endif %}
           </div>
         </a>
       </article>
       {% endfor %}
     </div>
+
+    <div class="scroll-sentinel"
+      {% if paginator.next_page %}data-next="{{ paginator.next_page_path | relative_url }}"{% else %}data-done="true"{% endif %}>
+      <span class="scroll-sentinel-spinner"></span>
+    </div>
+
   </div>
 </div>
+
+<script>
+(function () {
+  var sentinel = document.querySelector('.scroll-sentinel');
+  var grid = document.getElementById('project-grid');
+  if (!sentinel || !grid || sentinel.dataset.done) return;
+
+  var observer = new IntersectionObserver(function (entries) {
+    if (!entries[0].isIntersecting) return;
+    var nextUrl = sentinel.dataset.next;
+    if (!nextUrl) return;
+
+    observer.unobserve(sentinel);
+    sentinel.classList.add('is-loading');
+
+    fetch(nextUrl)
+      .then(function (res) { return res.text(); })
+      .then(function (html) {
+        var doc = new DOMParser().parseFromString(html, 'text/html');
+        var cards = doc.querySelectorAll('.project-card');
+        cards.forEach(function (card) { grid.appendChild(card); });
+
+        var nextSentinel = doc.querySelector('.scroll-sentinel');
+        if (nextSentinel && !nextSentinel.dataset.done) {
+          sentinel.dataset.next = nextSentinel.dataset.next;
+          sentinel.classList.remove('is-loading');
+          observer.observe(sentinel);
+        } else {
+          sentinel.remove();
+        }
+      })
+      .catch(function () {
+        sentinel.classList.remove('is-loading');
+        observer.observe(sentinel);
+      });
+  }, { rootMargin: '300px' });
+
+  observer.observe(sentinel);
+})();
+</script>

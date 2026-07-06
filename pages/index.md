@@ -16,15 +16,36 @@ permalink: /
   </div>
 </section>
 
+<section class="clients">
+  <div class="container">
+    <p class="clients-label">Brands we've worked with</p>
+    <div class="clients-list">
+      <span>Bvlgari</span>
+      <span>Tiffany &amp; Co.</span>
+      <span>SK-II</span>
+      <span>Harper's Bazaar</span>
+      <span>Singtel</span>
+      <span>KFC</span>
+      <span>Charles &amp; Keith</span>
+      <span>Sentosa</span>
+      <span>Adidas</span>
+    </div>
+  </div>
+</section>
+
 <section class="featured-work">
   <div class="container">
-    <h2 class="section-title">Selected Work</h2>
+    <h2 class="section-title">Featured Projects</h2>
     <div class="project-grid">
       {% assign featured = site.projects | where: "featured", true %}
       {% for project in featured %}
       <article class="project-card">
         <a href="{{ project.url | relative_url }}" class="project-card-link">
-          {% if project.image %}
+          {% if project.thumbnail %}
+          <div class="project-card-thumb">
+            <img src="{{ project.thumbnail }}" alt="{{ project.title }}">
+          </div>
+          {% elsif project.image %}
           <div class="project-card-thumb">
             <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
           </div>
@@ -45,22 +66,6 @@ permalink: /
     </div>
     <div class="section-cta">
       <a href="{{ '/projects/' | relative_url }}" class="btn btn-secondary">View All Work</a>
-    </div>
-  </div>
-</section>
-
-<section class="clients">
-  <div class="container">
-    <p class="clients-label">Brands we've worked with</p>
-    <div class="clients-list">
-      <span>SK-II</span>
-      <span>Bvlgari</span>
-      <span>Singtel</span>
-      <span>KFC</span>
-      <span>Sentosa</span>
-      <span>Asahi</span>
-      <span>Charles &amp; Keith</span>
-      <span>Gastrobeats</span>
     </div>
   </div>
 </section>

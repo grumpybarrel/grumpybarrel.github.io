@@ -6,6 +6,7 @@
   <title>{% if page.title and page.title != site.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
   {% seo %}
   {% feed_meta %}
 </head>
@@ -14,7 +15,10 @@
   <header class="site-header">
     <div class="container">
       <a href="{{ '/' | relative_url }}" class="site-logo">Grumpy Barrel</a>
-      <nav class="site-nav">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
         <a href="{{ '/projects/' | relative_url }}" {% if page.url contains '/projects' %}class="active"{% endif %}>Work</a>
         <a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about' %}class="active"{% endif %}>About</a>
         <a href="{{ '/contact/' | relative_url }}" {% if page.url contains '/contact' %}class="active"{% endif %}>Contact</a>
@@ -35,12 +39,26 @@
           <a href="{{ '/projects/' | relative_url }}">Work</a>
           <a href="{{ '/about/' | relative_url }}">About</a>
           <a href="{{ '/contact/' | relative_url }}">Contact</a>
-          <a href="https://vimeo.com/scotttes" target="_blank" rel="noopener">Vimeo</a>
+          <a href="https://vimeo.com/scotttes" target="_blank" rel="noopener noreferrer">Vimeo</a>
+          <a href="https://www.instagram.com/scott_tes/" target="_blank" rel="noopener noreferrer">Instagram</a>
         </nav>
         <p class="footer-copy">&copy; {{ 'now' | date: "%Y" }} Grumpy Barrel. Singapore.</p>
       </div>
     </div>
   </footer>
 
+<script>
+  (function() {
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('site-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', function() {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        nav.classList.toggle('is-open');
+      });
+    }
+  })();
+</script>
 </body>
 </html>
