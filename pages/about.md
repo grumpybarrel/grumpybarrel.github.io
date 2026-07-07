@@ -13,21 +13,21 @@ permalink: /about/
 
 ## The studio
 
-We're not a large agency. Grumpy Barrel is a focused video production studio based in Singapore — tight on craft, honest about what a project needs, and easy to work with.
+We're a small and lean agency. We don't have floors of account managers or a reel padded with spec work. What we have is a team that personally cares about your work and your vision.
 
-We don't have floors of account managers or a reel padded with spec work. What we have is a team that knows how to shoot, how to cut, and how to make something that actually holds up.
+We pride ourselves with delivering clean work that withstands the test of time!
 
 ## How we work
 
-We take briefs seriously — which means we'll push back if something isn't right, and we'll tell you when a simpler approach will serve you better than a complicated one. We don't oversell.
+Our work always starts with a conversation. Tell us what you're trying to say, who you're saying it to, and what you have to work with. We'll figure out the rest together!
 
-Most of the work starts with a conversation. Tell us what you're trying to say, who you're saying it to, and what you have to work with. We'll figure out the rest.
+The creative process is not always a straight forward one. You can count of us to push back if something isn't right, and we'll tell you when a simpler approach will serve you better than a complicated one. We don't oversell!
 
 ## What we make
 
-Commercials, brand films, event recaps, fashion and beauty content, social video, and documentary-style work. We're comfortable across formats, from a tight 15-second cut to a longer story that earns its running time.
+Commercials, brand films, event recaps, fashion and beauty content, social video, and documentary-style work. We're proficient across many formats, from a tight 15-second cut to a longer story that earns its running time!
 
-Fashion and beauty is where we've built much of our portfolio — but the craft transfers across every format we take on.
+Fashion and beauty is our specialty but don't be afraid to reach out if you're in need of a funkier video!
 
 ## Based in Singapore
 
@@ -35,21 +35,39 @@ We're local. We know the city, we know how to move fast in it, and we understand
 
   </div>
 
-  <div class="clients">
-    <p class="clients-label">Major brands we've worked with</p>
-    <div class="clients-list">
-      <span>SK-II</span>
+</div>
+
+<section class="clients clients--about">
+  <p class="clients-label">Brands we've worked with</p>
+  <div class="clients-marquee">
+    <div class="clients-track">
       <span>Bvlgari</span>
+      <span>Tiffany &amp; Co.</span>
+      <span>SK-II</span>
+      <span>Harper's Bazaar</span>
       <span>Singtel</span>
       <span>KFC</span>
-      <span>Sentosa</span>
       <span>Charles &amp; Keith</span>
+      <span>Sentosa</span>
+      <span>Adidas</span>
+    </div>
+    <div class="clients-track" aria-hidden="true">
+      <span>Bvlgari</span>
+      <span>Tiffany &amp; Co.</span>
+      <span>SK-II</span>
+      <span>Harper's Bazaar</span>
+      <span>Singtel</span>
+      <span>KFC</span>
+      <span>Charles &amp; Keith</span>
+      <span>Sentosa</span>
+      <span>Adidas</span>
     </div>
   </div>
+</section>
 
+<div class="container">
   <div class="about-contact">
-    <p>Have a brief, a rough idea, or just a budget and a deadline? We'll work with any of those.</p>
+    <p>Have a brief, a rough idea, or just a budget and a deadline?</p>
     <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary">Get in Touch</a>
   </div>
-
 </div>

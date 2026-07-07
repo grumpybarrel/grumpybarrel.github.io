@@ -12,18 +12,29 @@ permalink: /
   <div class="container">
     <h1 class="hero-title">Grumpy Barrel</h1>
     <p class="hero-tagline">Small films with grit, heart, and a clean finish.</p>
-    <p class="hero-intro">We're a video production studio based in Singapore. We make commercials, brand films, event recaps, and short-form content for brands that care how things look.</p>
+    <p class="hero-intro">We're a professional video production studio for those who care deeply about brand.</p>
     <div class="hero-cta">
-      <a href="{{ '/projects/' | relative_url }}" class="btn btn-primary">See Our Work</a>
-      <a href="{{ '/contact/' | relative_url }}" class="btn btn-secondary">Get in Touch</a>
+      <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary">Get in Touch</a>
+      <a href="{{ '/projects/' | relative_url }}" class="btn btn-secondary">See Our Work</a>
     </div>
   </div>
 </section>
 
 <section class="clients">
-  <div class="container">
-    <p class="clients-label">Brands we've worked with</p>
-    <div class="clients-list">
+  <p class="clients-label">Our Partners</p>
+  <div class="clients-marquee">
+    <div class="clients-track">
+      <span>Bvlgari</span>
+      <span>Tiffany &amp; Co.</span>
+      <span>SK-II</span>
+      <span>Harper's Bazaar</span>
+      <span>Singtel</span>
+      <span>KFC</span>
+      <span>Charles &amp; Keith</span>
+      <span>Sentosa</span>
+      <span>Adidas</span>
+    </div>
+    <div class="clients-track" aria-hidden="true">
       <span>Bvlgari</span>
       <span>Tiffany &amp; Co.</span>
       <span>SK-II</span>
@@ -110,7 +121,7 @@ permalink: /
   <div class="container">
     <div class="about-teaser-inner">
       <h2>The studio</h2>
-      <p>Grumpy Barrel is a small production house. Not an agency, not a collective — just a tight crew that takes the work seriously. We're based in Singapore and we keep things honest: no inflated quotes, no over-promising, no filler footage.</p>
+      <p>Grumpy Barrel is a small production house based in Singapore. Not an agency, not a collective — just a lean and tight crew that executes! We're really curious about your story and how we can help to showcase and amplify your mission! </p>
       <a href="{{ '/about/' | relative_url }}" class="btn btn-secondary">About Us</a>
     </div>
   </div>
